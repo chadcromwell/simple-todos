@@ -1,0 +1,23 @@
+<body>
+<div class="container">
+    <header>
+        <h1>Todo List {{incompleteCount}}</h1>
+
+        <label class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+        </label>
+
+        <form class="new-task">
+            <label for="taskInputForm">Task input form</label>
+            <input type="text" id="taskInputForm" name="text" placeholder="Type to add new tasks" />
+        </form>
+    </header>
+
+    <ul>
+        {{#each tasks}} <!--For each tasks - Uses tasks helper-->
+            {{> task}} <!--task Template, defined in task.html-->
+        {{/each}}
+    </ul>
+</div>
+</body>
