@@ -2,9 +2,8 @@
     <li class="{{#if checked}}checked{{/if}}">
         <button class="delete">&times;</button>
 
-        <label for="taskCheckbox">Task checkbox</label>
         <input type="checkbox" id="taskCheckbox" checked="{{checked}}" class="toggle-checked" />
 
-        <span class="text">{{text}}</span>
+        <span class="text"><strong>{{username}}</strong> - {{text}}</span>
     </li>
 </template>
