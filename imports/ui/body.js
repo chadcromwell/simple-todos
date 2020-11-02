@@ -1,3 +1,4 @@
+import { Meteor } from "meteor/meteor";
 import { Template } from 'meteor/templating';
 import { ReactiveDict }  from 'meteor/reactive-dict';
 import { Tasks } from '../api/tasks.js';
@@ -40,6 +41,8 @@ Template.body.events({
         Tasks.insert({
             text, //The text
             createdAt: new Date(), //The time it was submitted
+            owner: Meteor.userId(), //The user ID
+            username: Meteor.user().username, //The username
         });
 
         target.text.value = ''; //Clear the form after inserted
